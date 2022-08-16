@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Number Guessing Game</title>
+
+	<style>
+		html {
+	font-family: sans-serif;
+	}
+	
+		body {
+	width: 50%;
+	max-width: 800px;
+	min-width: 480px;
+	margin: 0 auto;
+	}
+	.try-btn{
+		margin: 20px 0 20px 0;
+	}
+	</style>
+</head>
+
+<body>
+<h1>Add 2 numbers submit your answer</h1>
+
+<p> Y = <span id="num1"></span></p>
+<p> Z = <span id="num2"></span></p>
+
+<button class="try-btn" type="button" onclick="window.location.reload();">Try Again</button>
+
+<div class="form">
+	<label for="guessField">Enter Your Answer: </label>
+	<input type = "text" id = "guessField" class = "guessField">
+	<input type = "submit" value = "Submit answer"
+	class = "guessSubmit" id = "submitguess">
+</div>
+
+
+
+<script type = "text/javascript">
+
+	// random value 1 generated
+	let y = Math.floor(Math.random() * 1000 + 1);
+	document.getElementById('num1').innerHTML = y;
+
+	// random value 2 generated
+	let z = Math.floor(Math.random() * 100 + 1);
+	document.getElementById('num2').innerHTML = z;
+
+	// answer will be
+	const ans = y+z ;
+	
+	// counting the number of guesses
+	// made for correct Guess
+		let attempt = 1;
+	
+	document.getElementById("submitguess").onclick = () =>{
+	
+		// number guessed by user	
+		let userAns = document.getElementById("guessField").value;
+
+		if(userAns == ans)
+		{	
+			alert("CONGRATULATIONS!!! YOU ANSWER IT RIGHT");
+		}
+		else if(userAns == '') /* if guessed number is empty*/ 
+	   	{    
+	       attempt++;
+	       alert("OOPS!! YOUR ANSWER IS EMPTY");
+	   	}
+		else
+		{
+			attempt++;
+			alert("OOPS SORRY!! YOUR ANSWER WRONG")
+		}
+
+		
+	}
+
+
+</script>
+</body>
+</html>					

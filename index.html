@@ -52,8 +52,7 @@
 	const ans = y+z ;
 	
 	// counting the number of guesses
-	// made for correct Guess
-		let attempt = 1;
+
 	
 	document.getElementById("submitguess").onclick = () =>{
 	
@@ -66,12 +65,12 @@
 		}
 		else if(userAns == '') /* if guessed number is empty*/ 
 	   	{    
-	       attempt++;
+	      
 	       alert("OOPS!! YOUR ANSWER IS EMPTY");
 	   	}
 		else
 		{
-			attempt++;
+			
 			alert("OOPS SORRY!! YOUR ANSWER WRONG")
 		}
 
